@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>军队基层心理服务闭环管理运营模块 V1.0</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="img">
+              <path d="M24 5 39 11v11c0 9.8-5.9 16.8-15 21-9.1-4.2-15-11.2-15-21V11L24 5Z" />
+              <path d="M16 25h16M18 18h12M21 32h6" />
+            </svg>
+          </div>
+          <div>
+            <strong>心理服务闭环</strong>
+            <span>V1.0 单机演示版</span>
+          </div>
+        </div>
+        <nav class="nav" aria-label="主导航">
+          <button class="nav-item active" data-page="dashboard">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1v-8Z" /></svg></span><span>领导驾驶舱</span>
+          </button>
+          <button class="nav-item" data-page="org">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 7a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM5 22v-2a7 7 0 0 1 14 0v2M5 11h14M3 15h18" /></svg></span><span>组织人员</span>
+          </button>
+          <button class="nav-item" data-page="import">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 8l5-5 5 5M4 17v3h16v-3" /></svg></span><span>测评导入</span>
+          </button>
+          <button class="nav-item" data-page="register">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 3 21 12l-9 9-9-9 9-9ZM12 8v5M12 16h.01" /></svg></span><span>重点台账</span>
+          </button>
+          <button class="nav-item" data-page="followup">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v6h-6M9 12l2 2 4-5" /></svg></span><span>随访任务</span>
+          </button>
+          <button class="nav-item" data-page="crisis">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 3 22 20H2L12 3ZM12 9v5M12 17h.01" /></svg></span><span>危机干预</span>
+          </button>
+          <button class="nav-item" data-page="service">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10M17 17l2 2 3-4" /></svg></span><span>服务台账</span>
+          </button>
+          <button class="nav-item" data-page="report">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M6 4h9l3 3v13H6V4ZM14 4v4h4M9 13h6M9 17h4M8 9h2" /></svg></span><span>AI报告中心</span>
+          </button>
+          <button class="nav-item" data-page="audit">
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 3 20 7v5c0 5-3.2 8.4-8 10-4.8-1.6-8-5-8-10V7l8-4ZM9 12l2 2 4-5" /></svg></span><span>审计备份</span>
+          </button>
+        </nav>
+        <div class="deploy-card">
+          <span class="status-dot"></span>
+          <div>
+            <b>本地安全运行</b>
+            <small>127.0.0.1 · 离线可用 · 未启用上报</small>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <p class="system-name">军队基层心理服务闭环管理运营模块</p>
+            <h1 id="page-title">领导驾驶舱</h1>
+            <div class="command-subtitle">
+              <span>COMMAND DASHBOARD</span>
+              <b>LOCAL CLOSED-LOOP OPERATIONS</b>
+            </div>
+          </div>
+          <div class="top-actions">
+            <button class="ghost-btn" id="demo-flow-btn">演示闭环</button>
+            <button class="primary-btn" id="export-btn">导出汇报材料</button>
+            <button class="icon-btn fullscreen-btn" id="fullscreen-btn" title="全屏显示" aria-label="全屏显示">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 3H3v5M16 3h5v5M8 21H3v-5M21 16v5h-5" />
+              </svg>
+            </button>
+            <div class="user-chip">
+              <span>单位领导</span>
+              <strong>演示账号</strong>
+            </div>
+          </div>
+        </header>
+
+        <section class="story-strip" id="story-strip">
+          <div class="story-step done">测评导入</div>
+          <div class="story-line"></div>
+          <div class="story-step done">人工复核</div>
+          <div class="story-line"></div>
+          <div class="story-step active">重点台账</div>
+          <div class="story-line"></div>
+          <div class="story-step">随访派单</div>
+          <div class="story-line"></div>
+          <div class="story-step">报告归档</div>
+        </section>
+
+        <section class="page active" id="dashboard-page">
+          <div class="dashboard-grid">
+            <section class="hero-panel">
+              <div class="hero-bg"></div>
+              <div class="command-radar" aria-hidden="true">
+                <i></i><i></i><i></i>
+              </div>
+              <div class="data-rain" aria-hidden="true">
+                <span>LOCAL</span><span>RISK</span><span>AUDIT</span><span>SYNC OFF</span>
+              </div>
+              <div class="hero-content">
+                <div>
+                  <p>当前单位心理服务态势</p>
+                  <div class="hero-kpi-line">
+                    <div class="hero-kpi-item">
+                      <strong>3</strong>
+                      <span>重点事项待闭环</span>
+                    </div>
+                    <div class="hero-kpi-item">
+                      <strong>86%</strong>
+                      <span>服务完成率</span>
+                    </div>
+                  </div>
+                  <span>系统仅提供风险辅助提示，所有等级均需专业人员复核确认。</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="metric-card high">
+              <em>RISK-FOCUS</em>
+              <span>重点关注</span>
+              <strong id="key-count">18</strong>
+              <small>较上周 -3</small>
+              <div class="mini-spark"><i style="--w:38%"></i><i style="--w:52%"></i><i style="--w:48%"></i><i style="--w:34%"></i></div>
+            </section>
+            <section class="metric-card warn">
+              <em>TASK-OPEN</em>
+              <span>未闭环任务</span>
+              <strong id="open-count">7</strong>
+              <small>2 项临近到期</small>
+              <div class="mini-spark"><i style="--w:62%"></i><i style="--w:58%"></i><i style="--w:44%"></i><i style="--w:36%"></i></div>
+            </section>
+            <section class="metric-card ok">
+              <em>SERVICE-RATE</em>
+              <span>服务完成率</span>
+              <strong>86%</strong>
+              <small>本月 132 次服务</small>
+              <div class="mini-spark"><i style="--w:45%"></i><i style="--w:56%"></i><i style="--w:72%"></i><i style="--w:86%"></i></div>
+            </section>
+
+            <section class="panel risk-panel">
+              <div class="panel-head">
+                <h3>风险等级分布</h3>
+                <button class="icon-btn" title="刷新">↻</button>
+              </div>
+              <div class="risk-body">
+                <div class="ring-chart" aria-label="风险等级环图">
+                  <div class="ring-center">
+                    <b>186</b>
+                    <span>建档人员</span>
+                  </div>
+                </div>
+                <div class="risk-list">
+                  <div><span class="risk-dot red"></span>红色复核 <b>2</b></div>
+                  <div><span class="risk-dot orange"></span>橙色关注 <b>6</b></div>
+                  <div><span class="risk-dot yellow"></span>黄色观察 <b>10</b></div>
+                  <div><span class="risk-dot green"></span>绿色稳定 <b>168</b></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel trend-panel">
+              <div class="panel-head">
+                <h3>服务闭环趋势</h3>
+                <span>近 6 周</span>
+              </div>
+              <div class="bars">
+                <i style="--h: 42%"></i>
+                <i style="--h: 56%"></i>
+                <i style="--h: 48%"></i>
+                <i style="--h: 69%"></i>
+                <i style="--h: 74%"></i>
+                <i style="--h: 86%"></i>
+                <svg class="trend-line" viewBox="0 0 360 170" preserveAspectRatio="none" aria-hidden="true">
+                  <polyline points="18,118 82,95 146,104 210,66 274,54 338,30" />
+                  <circle cx="18" cy="118" r="4" />
+                  <circle cx="82" cy="95" r="4" />
+                  <circle cx="146" cy="104" r="4" />
+                  <circle cx="210" cy="66" r="4" />
+                  <circle cx="274" cy="54" r="4" />
+                  <circle cx="338" cy="30" r="4" />
+                </svg>
+              </div>
+            </section>
+
+            <section class="panel heat-panel">
+              <div class="panel-head">
+                <h3>单位风险热力</h3>
+                <span>脱敏汇总</span>
+              </div>
+              <div class="heatmap" id="heatmap"></div>
+            </section>
+
+            <section class="panel timeline-panel">
+              <div class="panel-head">
+                <h3>未闭环事项</h3>
+                <button class="ghost-btn small" data-page-link="followup">派单中心</button>
+              </div>
+              <div class="timeline">
+                <article>
+                  <b>橙色对象复访到期</b>
+                  <span>三营二连 · 责任人：王教员 · 今日 16:00</span>
+                </article>
+                <article>
+                  <b>危机干预复盘待确认</b>
+                  <span>机关保障队 · 心理师双确认 · 明日到期</span>
+                </article>
+                <article>
+                  <b>月度服务报告待导出</b>
+                  <span>报告中心已生成草稿 · 等待单位负责人确认</span>
+                </article>
+              </div>
+            </section>
+
+            <section class="panel ai-panel">
+              <div class="panel-head">
+                <h3>AI辅助报告</h3>
+                <span>人工复核后归档</span>
+              </div>
+              <div class="report-preview">
+                <b>5月基层心理服务月报</b>
+                <p>已汇总测评、随访、危机处置、讲座培训与满意度数据，建议补充 2 条典型服务案例。</p>
+                <button class="primary-btn" data-page-link="report">生成汇报材料</button>
+              </div>
+            </section>
+
+            <section class="panel live-panel">
+              <div class="panel-head">
+                <h3>实时运行态势</h3>
+                <span>LOCAL OPS</span>
+              </div>
+              <div class="ops-feed">
+                <article><i class="pulse ok"></i><b>19:42</b><span>月度报告草稿已生成，等待人工确认</span></article>
+                <article><i class="pulse warn"></i><b>19:30</b><span>二营一连红色复核对象进入危机复盘</span></article>
+                <article><i class="pulse blue"></i><b>18:55</b><span>新导入测评 36 条，4 条建议纳入重点台账</span></article>
+                <article><i class="pulse ok"></i><b>18:21</b><span>三营二连随访任务完成，风险等级待复核</span></article>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="page" id="org-page"></section>
+        <section class="page" id="import-page"></section>
+        <section class="page" id="register-page"></section>
+        <section class="page" id="followup-page"></section>
+        <section class="page" id="crisis-page"></section>
+        <section class="page" id="service-page"></section>
+        <section class="page" id="report-page"></section>
+        <section class="page" id="audit-page"></section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
