@@ -159,7 +159,6 @@ button {
   text-shadow: 0 0 14px rgba(67, 240, 226, 0.28), 1px 1px 0 rgba(0, 0, 0, 0.45);
 }
 
-.brand span,
 .deploy-card small {
   display: block;
   margin-top: 4px;
@@ -169,12 +168,6 @@ button {
 
 .brand > div:last-child {
   min-width: 0;
-}
-
-.brand > div:last-child > span {
-  max-width: 150px;
-  font-size: 10px;
-  line-height: 1.35;
 }
 
 .nav {
