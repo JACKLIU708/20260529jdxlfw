@@ -294,20 +294,6 @@ function bindEvents() {
     }
   });
 
-  document.querySelector("#demo-flow-btn").addEventListener("click", () => {
-    const sequence = ["import", "register", "followup", "crisis", "report", "dashboard"];
-    let index = 0;
-    showToast("开始演示：筛查导入 → 重点台账 → 随访派单 → 危机闭环 → 报告归档");
-    const timer = window.setInterval(() => {
-      setPage(sequence[index]);
-      index += 1;
-      if (index >= sequence.length) {
-        window.clearInterval(timer);
-        showToast("闭环演示完成：所有关键节点均可留痕、复核、导出。");
-      }
-    }, 1100);
-  });
-
   document.querySelector("#export-btn").addEventListener("click", () => {
     showToast("已模拟导出领导汇报材料，导出人、时间和水印均已留痕。");
   });
