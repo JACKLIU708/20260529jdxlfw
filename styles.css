@@ -18,9 +18,9 @@
   --green: #55d68b;
   --radius: 6px;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.045);
-  --font-ui: "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
-  --font-title: "Microsoft YaHei UI", "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
-  --font-num: "Bahnschrift", "Segoe UI Semibold", "Segoe UI", Arial, sans-serif;
+  --font-ui: "Segoe UI Variable Text", "Microsoft YaHei UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --font-title: "Segoe UI Variable Display", "Microsoft YaHei UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --font-num: "Bahnschrift SemiCondensed", "Bahnschrift", "Segoe UI Variable Display", "Segoe UI", Arial, sans-serif;
   font-family: var(--font-ui);
 }
 
@@ -40,7 +40,10 @@ body {
   color: var(--text);
   letter-spacing: 0;
   font-family: var(--font-ui);
-  text-rendering: geometricPrecision;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 body::before,
@@ -869,7 +872,7 @@ h3::before {
 }
 
 .risk-panel .panel-head::before {
-  content: "M-01 / RISK";
+  content: "M-01 / AI-RISK";
 }
 
 .trend-panel .panel-head::before {
@@ -877,7 +880,7 @@ h3::before {
 }
 
 .heat-panel .panel-head::before {
-  content: "M-03 / UNIT";
+  content: "M-03 / FOCUS";
 }
 
 .timeline-panel .panel-head::before {
@@ -1760,4 +1763,70 @@ h3 {
 .record-card,
 .template-card {
   font-family: var(--font-ui);
+}
+
+/* Refined type hierarchy: weight is reserved for decisions and key figures. */
+.brand strong {
+  font-weight: 600;
+}
+
+.nav-item {
+  color: #b7cede;
+  font-weight: 500;
+}
+
+.nav-item.active {
+  font-weight: 600;
+}
+
+.system-name,
+.command-subtitle,
+.metric-card span,
+.panel-head span {
+  font-weight: 500;
+}
+
+.metric-card small,
+.hero-content > div > span,
+.ring-center span,
+.timeline span,
+.record-card span,
+.data-table td,
+.detail-list,
+.report-preview {
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2,
+h3,
+.hero-content p,
+.hero-kpi-line span,
+.primary-btn,
+.ghost-btn,
+.icon-btn,
+.data-table th,
+.timeline b,
+.report-preview b,
+.record-card b,
+.template-card b,
+.detail-list b,
+.audit-row b,
+.risk-list b,
+.heat-cell span,
+.tag {
+  font-weight: 600;
+}
+
+.metric-card strong,
+.ring-center b,
+.heat-cell b {
+  font-weight: 700;
+}
+
+.risk-list div {
+  font-weight: 500;
 }
