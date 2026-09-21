@@ -63,7 +63,7 @@ function dataShell(title, body, side = "", full = false) {
         <div class="toolbar">
           <div>
             <h3>${title}</h3>
-            <p class="system-name">演示成交版保留真实业务字段，敏感详情按权限显示。</p>
+            <p class="system-name">系统保留完整业务字段，敏感详情按权限显示。</p>
           </div>
           <div class="filters">
             <input class="search" placeholder="搜索人员/单位/任务" />
@@ -154,7 +154,7 @@ function initPages() {
     "组织人员管理",
     `
       <div class="workflow-board">
-        <div class="stage"><h3>单位层级</h3><div class="record-card"><b>演示支队</b><span>机关 / 一营 / 二营 / 三营</span></div><div class="record-card"><b>一营</b><span>一连、二连、三连</span></div><div class="record-card"><b>机关保障队</b><span>干部、文职、勤务保障</span></div></div>
+        <div class="stage"><h3>单位层级</h3><div class="record-card"><b>某支队</b><span>机关 / 一营 / 二营 / 三营</span></div><div class="record-card"><b>一营</b><span>一连、二连、三连</span></div><div class="record-card"><b>机关保障队</b><span>干部、文职、勤务保障</span></div></div>
         <div class="stage"><h3>人员导入</h3><div class="record-card"><b>Excel 模板导入</b><span>186 名人员 · 12 个基础字段</span><div class="progress"><i style="--p:100%"></i></div></div><div class="record-card"><b>手工录入</b><span>零星新增、转隶补录、临时服务对象</span><button class="ghost-btn small" data-action="manual-person">新增人员</button></div><div class="record-card"><b>人员状态</b><span>在位、休假、转隶、退出现役</span></div></div>
         <div class="stage"><h3>角色绑定</h3><div class="record-card"><b>单位领导</b><span>汇总态势、导出审批</span></div><div class="record-card"><b>心理师</b><span>授权档案、报告确认</span></div><div class="record-card"><b>心理骨干</b><span>任务对象必要信息</span></div></div>
         <div class="stage"><h3>标准编码</h3><div class="record-card"><b>ORG-LOCAL-001</b><span>单位编码</span></div><div class="record-card"><b>PERSON-单位-序号</b><span>脱敏上报与审计追踪</span></div><div class="record-card manual-preview"><b>手工录入校验</b><span>姓名、单位、岗位、人员状态、联系方式、档案权限</span></div></div>
@@ -226,7 +226,7 @@ function initPages() {
   document.querySelector("#report-page").innerHTML = `
     <div class="data-page-shell full-data-shell">
       <div class="toolbar">
-        <div><h3>AI辅助报告中心</h3><p class="system-name">推荐接入 Qwen 系列，当前演示使用本地模板模拟生成。</p></div>
+        <div><h3>AI辅助报告中心</h3><p class="system-name">推荐接入 Qwen 系列，当前使用本地模板生成。</p></div>
         <div class="filters"><button class="primary-btn" data-action="generate">生成报告草稿</button><button class="ghost-btn" data-action="confirm">人工确认归档</button><button class="ghost-btn" data-action="watermark">带水印导出</button></div>
       </div>
       <div class="report-layout">
@@ -281,7 +281,7 @@ function bindEvents() {
       const messages = {
         import: "已模拟导入 186 条测评记录，原始 Excel 已归档。",
         archive: "原始文件已进入本地文件库，审计日志已生成。",
-        mask: "已切换演示口径：领导看连队汇总，心理师授权后查看个体明细。",
+        mask: "已切换查看口径：领导查看连队汇总，心理师授权后查看个体明细。",
         "manual-person": "已打开手工录入流程：适用于零星新增、转隶补录和临时服务对象。",
         review: "已创建人工复核记录，等待心理师确认。",
         assign: "随访任务已指派给心理骨干，周期为 14 天。",
@@ -302,10 +302,10 @@ function bindEvents() {
     try {
       if (!document.fullscreenElement) {
         await document.querySelector("#app").requestFullscreen();
-        showToast("已进入全屏演示模式。");
+        showToast("已进入全屏模式。");
       } else {
         await document.exitFullscreen();
-        showToast("已退出全屏演示模式。");
+        showToast("已退出全屏模式。");
       }
     } catch (error) {
       showToast("当前浏览器限制了全屏，请使用 F11 或浏览器菜单进入全屏。");
