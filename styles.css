@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Source Han Sans SC UI";
+  src: url("./assets/fonts/source-han-sans-sc-ui.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 250 900;
+  font-display: swap;
+}
+
 :root {
   color-scheme: dark;
   --bg: #020814;
@@ -18,8 +26,8 @@
   --green: #55d68b;
   --radius: 6px;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.48), inset 0 1px 0 rgba(255, 255, 255, 0.045);
-  --font-ui: "Segoe UI Variable Text", "Microsoft YaHei UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-  --font-title: "Segoe UI Variable Display", "Microsoft YaHei UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  --font-ui: "Source Han Sans SC UI", "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  --font-title: "Source Han Sans SC UI", "Microsoft YaHei UI", "PingFang SC", sans-serif;
   --font-num: "Bahnschrift SemiCondensed", "Bahnschrift", "Segoe UI Variable Display", "Segoe UI", Arial, sans-serif;
   font-family: var(--font-ui);
 }
@@ -1765,49 +1773,106 @@ h3 {
   font-family: var(--font-ui);
 }
 
-/* Refined type hierarchy: weight is reserved for decisions and key figures. */
+/* Embedded type system: crisp, restrained, and consistent online or offline. */
+body {
+  line-height: 1.45;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
 .brand strong {
   font-weight: 600;
 }
 
 .nav-item {
-  color: #b7cede;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 450;
 }
 
 .nav-item.active {
   font-weight: 600;
 }
 
-.system-name,
-.command-subtitle,
-.metric-card span,
-.panel-head span {
-  font-weight: 500;
-}
-
-.metric-card small,
-.hero-content > div > span,
-.ring-center span,
-.timeline span,
-.record-card span,
-.data-table td,
-.detail-list,
-.report-preview {
+.system-name {
+  font-size: 13px;
   font-weight: 400;
 }
 
-h1 {
-  font-weight: 700;
+.command-subtitle,
+.command-subtitle b {
+  font-weight: 500;
 }
 
+h1,
 h2,
 h3,
 .hero-content p,
+.hero-kpi-line strong,
 .hero-kpi-line span,
-.primary-btn,
-.ghost-btn,
-.icon-btn,
+.metric-card strong,
+.ring-center b,
+.heat-cell b {
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 650;
+}
+
+h2 {
+  font-size: 34px;
+  font-weight: 650;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 550;
+}
+
+.hero-content p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.hero-content > div > span {
+  line-height: 1.6;
+}
+
+.hero-kpi-line strong {
+  font-weight: 650;
+}
+
+.hero-kpi-line span {
+  font-size: 18px;
+  font-weight: 550;
+}
+
+.metric-card span,
+.panel-head span {
+  font-weight: 450;
+}
+
+.metric-card small {
+  font-weight: 400;
+}
+
+.metric-card strong,
+.ring-center b,
+.heat-cell b {
+  font-weight: 650;
+}
+
+.risk-list div {
+  font-weight: 450;
+}
+
+.risk-list b,
+.heat-cell span,
 .data-table th,
 .timeline b,
 .report-preview b,
@@ -1815,18 +1880,9 @@ h3,
 .template-card b,
 .detail-list b,
 .audit-row b,
-.risk-list b,
-.heat-cell span,
-.tag {
-  font-weight: 600;
-}
-
-.metric-card strong,
-.ring-center b,
-.heat-cell b {
-  font-weight: 700;
-}
-
-.risk-list div {
-  font-weight: 500;
+.tag,
+.primary-btn,
+.ghost-btn,
+.icon-btn {
+  font-weight: 550;
 }

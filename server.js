@@ -10,6 +10,7 @@ const types = {
   ".css": "text/css; charset=utf-8",
   ".js": "application/javascript; charset=utf-8",
   ".png": "image/png",
+  ".woff2": "font/woff2",
   ".md": "text/markdown; charset=utf-8",
 };
 
